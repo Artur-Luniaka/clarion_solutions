@@ -6,10 +6,10 @@ const MobileMenu = () => {
   return (
     <div className="w-full bg-primary-dark z-40 min-h-screen">
       <div className="container pt-[45px]">
-        <h2 className="font-oswald font-bold text-2xl uppercase text-primary-white leading-[29px] mb-6">
+        <h2 className="font-actay-wide font-bold text-2xl uppercase text-primary-white leading-[29px] mb-6">
           Need <span className="text-title-green">help?</span>
         </h2>
-        <button className="w-[320px] h-10 bg-primary-white rounded-[28px] text-primary-dark font-urbanist font-semibold text-sm leading-5 mb-[45px]">
+        <button className="flex justify-center items-center w-[320px] h-10 bg-primary-white rounded-[28px] text-primary-dark font-urbanist font-semibold text-sm leading-5 mb-[45px]">
           Contact us
         </button>
         <nav className="flex flex-col gap-8">

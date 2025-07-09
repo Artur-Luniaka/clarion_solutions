@@ -28,7 +28,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        oswald: ["var(--font-oswald)"],
+        "actay-wide": ["var(--font-actay-wide)"],
         urbanist: ["var(--font-urbanist)"],
         inter: ["var(--font-inter)"],
         montserrat: ["var(--font-montserrat)"],

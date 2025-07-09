@@ -1,5 +1,6 @@
 import "./globals.css";
-import { Inter, Urbanist, Montserrat, Raleway, Oswald } from "next/font/google";
+import { Inter, Urbanist, Montserrat, Raleway } from "next/font/google";
+import localFont from "next/font/local";
 
 // Google Fonts
 const inter = Inter({
@@ -26,9 +27,21 @@ const raleway = Raleway({
   display: "swap",
 });
 
-const oswald = Oswald({
-  subsets: ["latin"],
-  variable: "--font-oswald",
+// Local Font
+const actayWide = localFont({
+  src: [
+    {
+      path: "../fonts/ActayWide-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../fonts/ActayWide-Bold.woff",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-actay-wide",
   display: "swap",
 });
 
@@ -42,7 +55,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${urbanist.variable} ${montserrat.variable} ${raleway.variable} ${oswald.variable}`}
+        className={`${inter.variable} ${urbanist.variable} ${montserrat.variable} ${raleway.variable} ${actayWide.variable}`}
       >
         {children}
       </body>

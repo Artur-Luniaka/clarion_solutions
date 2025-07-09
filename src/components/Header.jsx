@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="container pt-5 pb-[15px] lg:py-8 flex justify-between items-center">
+      <header className="container  pt-5 pb-[15px] lg:py-8 flex justify-between items-center w-[360px] md:w-[768px] lg:w-[1280px]">
         <Link href="/" className="flex items-center gap-4">
           <Image src={logo} alt="logo" width={34} height={29} />
           <span className="text-primary-white font-urbanist font-bold text-base uppercase leading-5 tracking-[0.06em]">
@@ -27,31 +27,31 @@ const Header = () => {
         <nav className="gap-12 hidden lg:flex">
           <Link
             href="#"
-            className="text-primary-white font-urbanist font-normal text-base"
+            className="text-primary-white font-urbanist font-normal text-base hover:text-btn-green transition-colors duration-300"
           >
             Home
           </Link>
 
           <Link
             href="#"
-            className="text-primary-white font-urbanist font-normal text-base"
+            className="text-primary-white font-urbanist font-normal text-base hover:text-btn-green transition-colors duration-300"
           >
             Services
           </Link>
           <Link
             href="#"
-            className="text-primary-white font-urbanist font-normal text-base"
+            className="text-primary-white font-urbanist font-normal text-base hover:text-btn-green transition-colors duration-300"
           >
             About
           </Link>
           <Link
             href="#"
-            className="text-primary-white font-urbanist font-normal text-base"
+            className="text-primary-white font-urbanist font-normal text-base hover:text-btn-green transition-colors duration-300"
           >
             Contact
           </Link>
         </nav>
-        <button className="hidden lg:block w-[170px] h-10 bg-primary-white rounded-[28px] text-primary-dark font-urbanist font-semibold text-sm leading-5">
+        <button className="hidden lg:block w-[170px] h-10 bg-primary-white rounded-[28px] text-primary-dark font-urbanist font-semibold text-sm leading-5 hover:bg-btn-green transition-colors duration-300">
           Contact us
         </button>
         <button
