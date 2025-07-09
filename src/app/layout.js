@@ -33,7 +33,7 @@ const oswald = Oswald({
 });
 
 export const metadata = {
-  title: "Clarion solutions",
+  title: "CLARION SOLUTIONS",
   description:
     "Boost your website's position in Google and attract more organic traffic. We work with businesses of all sizes — from local companies to large eCommerce projects.",
 };
