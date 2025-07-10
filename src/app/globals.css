@@ -33,3 +33,19 @@ button {
   background-color: transparent;
   cursor: pointer;
 }
+
+/* Анимация для уведомления */
+@keyframes slide-down {
+  from {
+    transform: translateX(-50%) translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.5s ease-out forwards;
+}
