@@ -5,7 +5,7 @@ import blackShadow from "../../public/IMG/join-black-shadow.webp";
 import photoShadow from "../../public/IMG/join-photo-shadow.png";
 import photo from "../../public/IMG/join-photo.webp";
 
-const JoinSection = () => {
+const JoinSection = ({ onOpenModal }) => {
   return (
     <section className="py-[45px] lg:py-[145px] lg:relative">
       <div className="flex flex-col md:items-center lg:w-[536px]">
@@ -21,7 +21,11 @@ const JoinSection = () => {
             Start growing your business with SEO strategies that work.
           </p>
         </div>
-        <button className="w-[320px] lg:w-[272px] h-[40px] lg:h-[52px] flex items-center justify-center bg-btn-green text-primary-dark font-urbanist text-base font-semibold rounded-[28px] lg:mr-auto hover:bg-primary-white transition-all duration-300">
+        <button
+          type="button"
+          onClick={onOpenModal}
+          className="w-[320px] lg:w-[272px] h-[40px] lg:h-[52px] flex items-center justify-center bg-btn-green text-primary-dark font-urbanist text-base font-semibold rounded-[28px] lg:mr-auto hover:bg-primary-white transition-all duration-300"
+        >
           Get started now
         </button>
       </div>

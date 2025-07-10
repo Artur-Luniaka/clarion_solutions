@@ -3,7 +3,7 @@
 import Image from "next/image";
 import arrow from "../../public/SVG/diagonal-arrow.svg";
 
-const OurService = () => {
+const OurService = ({ onOpenModal }) => {
   const ourMob1 = "/IMG/our-one-mob.webp";
   const ourMob2 = "/IMG/our-two-mob.webp";
   const ourMob3 = "/IMG/our-three-mob.webp";
@@ -26,6 +26,8 @@ const OurService = () => {
           </p>
         </div>
         <button
+          type="button"
+          onClick={onOpenModal}
           style={{
             backgroundImage: `url(${ourMob1})`,
             backgroundSize: "contain",
@@ -49,6 +51,8 @@ const OurService = () => {
           </div>
         </button>
         <button
+          type="button"
+          onClick={onOpenModal}
           style={{
             backgroundImage: `url(${ourMob2})`,
             backgroundSize: "contain",
@@ -72,6 +76,8 @@ const OurService = () => {
           </div>
         </button>
         <button
+          type="button"
+          onClick={onOpenModal}
           style={{
             backgroundImage: `url(${ourMob3})`,
             backgroundSize: "contain",
@@ -95,6 +101,8 @@ const OurService = () => {
           </div>
         </button>
         <button
+          type="button"
+          onClick={onOpenModal}
           style={{
             backgroundImage: `url(${ourMob4})`,
             backgroundSize: "contain",
@@ -118,6 +126,8 @@ const OurService = () => {
           </div>
         </button>
         <button
+          type="button"
+          onClick={onOpenModal}
           style={{
             backgroundImage: `url(${ourMob2})`,
             backgroundSize: "contain",
@@ -149,7 +159,11 @@ const OurService = () => {
             We provide easy-to-understand updates on your progress.
           </p>
         </div>
-        <button className="w-[320px] h-[40px] flex items-center justify-center bg-btn-green text-primary-dark font-urbanist text-base font-semibold rounded-[28px] md:mx-auto">
+        <button
+          type="button"
+          onClick={onOpenModal}
+          className="w-[320px] h-[40px] flex items-center justify-center bg-btn-green text-primary-dark font-urbanist text-base font-semibold rounded-[28px] md:mx-auto"
+        >
           Get in touch
         </button>
       </div>
@@ -163,6 +177,8 @@ const OurService = () => {
           </p>
         </div>
         <button
+          type="button"
+          onClick={onOpenModal}
           style={{
             backgroundImage: `url(${ourDesk1})`,
             backgroundSize: "contain",
@@ -186,6 +202,8 @@ const OurService = () => {
           </div>
         </button>
         <button
+          type="button"
+          onClick={onOpenModal}
           style={{
             backgroundImage: `url(${ourDesk2})`,
             backgroundSize: "contain",
@@ -209,6 +227,8 @@ const OurService = () => {
           </div>
         </button>
         <button
+          type="button"
+          onClick={onOpenModal}
           style={{
             backgroundImage: `url(${ourDesk3})`,
             backgroundSize: "contain",
@@ -232,6 +252,8 @@ const OurService = () => {
           </div>
         </button>
         <button
+          type="button"
+          onClick={onOpenModal}
           style={{
             backgroundImage: `url(${ourDesk4})`,
             backgroundSize: "contain",
@@ -255,6 +277,8 @@ const OurService = () => {
           </div>
         </button>
         <button
+          type="button"
+          onClick={onOpenModal}
           style={{
             backgroundImage: `url(${ourDesk5})`,
             backgroundSize: "contain",
@@ -286,7 +310,11 @@ const OurService = () => {
             <p className="font-urbanist text-base font-light text-primary-white w-[307px]">
               We provide easy-to-understand updates on your progress.
             </p>
-            <button className="w-[307px] h-[52px] flex items-center justify-center bg-btn-green text-primary-dark font-urbanist text-base font-semibold rounded-[28px] hover:bg-primary-white transition-all duration-300">
+            <button
+              type="button"
+              onClick={onOpenModal}
+              className="w-[307px] h-[52px] flex items-center justify-center bg-btn-green text-primary-dark font-urbanist text-base font-semibold rounded-[28px] hover:bg-primary-white transition-all duration-300"
+            >
               Get in touch
             </button>
           </div>

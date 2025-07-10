@@ -12,16 +12,21 @@ import linkedin from "../../public/SVG/linkedin.svg";
 import telegram from "../../public/SVG/telegram.svg";
 import photo from "../../public/IMG/form-photo.webp";
 import logo from "../../public/IMG/seo-section-logo.png";
+import Notification from "./Notification";
 
-const FormAndContactSection = () => {
-  const [showNotification, setShowNotification] = useState(false);
+const FormAndContactSection = ({ onSubmit: onSubmitCallback }) => {
+  const [formKey, setFormKey] = useState(0);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
+    watch,
   } = useForm();
+
+  const phoneValue = watch("phone");
+  const isFormValid = phoneValue && phoneValue.toString().trim() !== "";
 
   const onSubmit = (data) => {
     const formData = {
@@ -31,31 +36,19 @@ const FormAndContactSection = () => {
     console.log(formData);
 
     reset();
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
-
-    setShowNotification(true);
+    setFormKey((prev) => prev + 1);
 
     setTimeout(() => {
-      setShowNotification(false);
-    }, 3000);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100);
+
+    if (onSubmitCallback) {
+      onSubmitCallback();
+    }
   };
 
   return (
     <>
-      {showNotification && (
-        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 animate-slide-down w-[90%] max-w-md">
-          <div className="bg-title-green text-primary-black px-4 py-3 md:px-6 md:py-4 rounded-lg shadow-lg border-2 border-primary-white">
-            <div className="flex items-center justify-center gap-2 md:gap-3">
-              <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary-black rounded-full animate-pulse flex-shrink-0"></div>
-              <span className="font-urbanist font-semibold text-xs md:text-sm">
-                Message sent successfully!
-              </span>
-            </div>
-          </div>
-        </div>
-      )}
-
       <section
         className="py-[45px] lg:py-[154px] lg:relative lg:z-10"
         id="contact"
@@ -72,32 +65,38 @@ const FormAndContactSection = () => {
         </div>
         <div className="mb-6 lg:mb-20 lg:relative">
           <form
+            key={formKey}
             onSubmit={handleSubmit(onSubmit)}
             className="md:flex md:flex-col md:items-center lg:items-start"
           >
             <input
               type="text"
               placeholder="Name"
-              {...register("name", { required: true })}
+              {...register("name")}
               className="w-[320px] lg:w-[370px] h-[40px] lg:h-[48px] px-6 py-[10px] border border-primary-white rounded-[32px] bg-transparent mb-3 placeholder:font-urbanist placeholder:font-light placeholder:text-sm placeholder:text-[#7e7e7e] outline-none hover:border-title-green transition-all duration-300 focus:border-title-green"
             />
 
             <input
               type="tel"
               placeholder="Phone number"
-              {...register("phone", { required: true })}
+              {...register("phone")}
               className="w-[320px] lg:w-[370px] h-[40px] lg:h-[48px] px-6 py-[10px] border border-primary-white rounded-[32px] bg-transparent mb-3 placeholder:font-urbanist placeholder:font-light placeholder:text-sm placeholder:text-[#7e7e7e] outline-none hover:border-title-green transition-all duration-300 focus:border-title-green"
             />
 
             <textarea
               placeholder="Your message"
-              {...register("message", { required: true })}
+              {...register("message")}
               className="w-[320px] lg:w-[370px] h-[100px] lg:h-[116px] px-6 py-[14px] border border-primary-white rounded-xl bg-transparent mb-4 placeholder:font-urbanist placeholder:font-light placeholder:text-sm placeholder:text-[#7e7e7e] resize-none outline-none hover:border-title-green transition-all duration-300 focus:border-title-green"
             />
 
             <button
               type="submit"
-              className="w-[320px] lg:w-[370px] h-[40px] lg:h-[56px] rounded-[28px] bg-primary-white text-primary-black font-urbanist font-semibold text-base flex items-center justify-center hover:bg-btn-green transition-all duration-300"
+              disabled={!isFormValid}
+              className={`w-[320px] lg:w-[370px] h-[40px] lg:h-[56px] rounded-[28px] bg-primary-white text-primary-black font-urbanist font-semibold text-base flex items-center justify-center transition-all duration-300 ${
+                isFormValid
+                  ? "opacity-100 hover:bg-btn-green cursor-pointer"
+                  : "opacity-40 cursor-not-allowed"
+              }`}
             >
               Send
             </button>

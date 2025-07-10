@@ -25,6 +25,7 @@ const MobileMenu = ({ onClose, onOpenModal }) => {
           Need <span className="text-title-green">help?</span>
         </h2>
         <button
+          type="button"
           className="flex justify-center items-center w-[320px] h-10 bg-primary-white rounded-[28px] text-primary-dark font-urbanist font-semibold text-sm leading-5 mb-[45px]"
           onClick={handleContactClick}
         >

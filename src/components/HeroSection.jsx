@@ -11,7 +11,7 @@ import manWoman from "../../public/IMG/hero-man-women-shadow.png";
 import manWomanPhoto from "../../public/IMG/hero-man-women.webp";
 import blackShadow from "../../public/IMG/hero-black-shadow.png";
 
-const HeroSection = () => {
+const HeroSection = ({ onOpenModal }) => {
   return (
     <section className="lg:relative py-[45px] lg:pt-[41px] lg:pb-[146px]">
       <h1 className="text-primary-white font-actay-wide font-bold text-[32px] lg:text-[67px] uppercase mb-6 md:text-center lg:mb-[60px]">
@@ -33,7 +33,11 @@ const HeroSection = () => {
             to large eCommerce projects.
           </p>
         </div>
-        <button className="flex justify-center items-center w-[320px] h-10 bg-btn-green rounded-[28px] text-primary-dark font-urbanist font-semibold text-sm leading-5 mb-6 mx-auto">
+        <button
+          type="button"
+          onClick={onOpenModal}
+          className="flex justify-center items-center w-[320px] h-10 bg-btn-green rounded-[28px] text-primary-dark font-urbanist font-semibold text-sm leading-5 mb-6 mx-auto"
+        >
           Contact us
         </button>
         <div className="relative overflow-hidden py-[50px] px-4 bg-primary-white rounded-[20px] w-[320px] md:w-[688px]">
@@ -61,7 +65,11 @@ const HeroSection = () => {
       </div>
       <div className="hidden lg:flex lg:flex-col">
         <div className="flex gap-[79px] items-center mb-[88px]">
-          <button className="flex justify-center items-center w-[265px] h-12 bg-btn-green rounded-[28px] text-primary-dark font-urbanist font-semibold text-base leading-5 hover:bg-primary-white transition-colors duration-300">
+          <button
+            type="button"
+            onClick={onOpenModal}
+            className="flex justify-center items-center w-[265px] h-12 bg-btn-green rounded-[28px] text-primary-dark font-urbanist font-semibold text-base leading-5 hover:bg-primary-white transition-colors duration-300"
+          >
             Contact us
           </button>
           <p className="font-urbanist font-light text-primary-white text-base w-[348px]">
