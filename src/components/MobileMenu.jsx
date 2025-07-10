@@ -2,8 +2,17 @@
 
 import Link from "next/link";
 
-const MobileMenu = ({ onClose }) => {
+const MobileMenu = ({ onClose, onOpenModal }) => {
   const handleLinkClick = () => {
+    if (onClose) {
+      onClose();
+    }
+  };
+
+  const handleContactClick = () => {
+    if (onOpenModal) {
+      onOpenModal();
+    }
     if (onClose) {
       onClose();
     }
@@ -17,7 +26,7 @@ const MobileMenu = ({ onClose }) => {
         </h2>
         <button
           className="flex justify-center items-center w-[320px] h-10 bg-primary-white rounded-[28px] text-primary-dark font-urbanist font-semibold text-sm leading-5 mb-[45px]"
-          onClick={handleLinkClick}
+          onClick={handleContactClick}
         >
           Contact us
         </button>
