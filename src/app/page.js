@@ -5,6 +5,7 @@ import OurService from "@/components/OurService";
 import SeoPartnerSection from "@/components/SeoPartnerSection";
 import WhyClarionSol from "@/components/WhyClarionSol";
 import FormAndContactSection from "@/components/FormAndContactSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <JoinSection />
         <FormAndContactSection />
       </main>
+      <Footer />
     </>
   );
 }

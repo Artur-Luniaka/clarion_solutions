@@ -47,20 +47,20 @@ const FormAndContactSection = () => {
             type="text"
             placeholder="Name"
             {...register("name", { required: true })}
-            className="w-[320px] lg:w-[370px] h-[40px] lg:h-[48px] px-6 py-[10px] border border-primary-white rounded-[32px] bg-transparent mb-3 placeholder:font-urbanist placeholder:font-light placeholder:text-sm placeholder:text-[#7e7e7e]"
+            className="w-[320px] lg:w-[370px] h-[40px] lg:h-[48px] px-6 py-[10px] border border-primary-white rounded-[32px] bg-transparent mb-3 placeholder:font-urbanist placeholder:font-light placeholder:text-sm placeholder:text-[#7e7e7e] outline-none hover:border-title-green transition-all duration-300 focus:border-title-green"
           />
 
           <input
             type="tel"
             placeholder="Phone number"
             {...register("phone", { required: true })}
-            className="w-[320px] lg:w-[370px] h-[40px] lg:h-[48px] px-6 py-[10px] border border-primary-white rounded-[32px] bg-transparent mb-3 placeholder:font-urbanist placeholder:font-light placeholder:text-sm placeholder:text-[#7e7e7e]"
+            className="w-[320px] lg:w-[370px] h-[40px] lg:h-[48px] px-6 py-[10px] border border-primary-white rounded-[32px] bg-transparent mb-3 placeholder:font-urbanist placeholder:font-light placeholder:text-sm placeholder:text-[#7e7e7e] outline-none hover:border-title-green transition-all duration-300 focus:border-title-green"
           />
 
           <textarea
             placeholder="Your message"
             {...register("message", { required: true })}
-            className="w-[320px] lg:w-[370px] h-[100px] lg:h-[116px] px-6 py-[14px] border border-primary-white rounded-xl bg-transparent mb-4 placeholder:font-urbanist placeholder:font-light placeholder:text-sm placeholder:text-[#7e7e7e] resize-none"
+            className="w-[320px] lg:w-[370px] h-[100px] lg:h-[116px] px-6 py-[14px] border border-primary-white rounded-xl bg-transparent mb-4 placeholder:font-urbanist placeholder:font-light placeholder:text-sm placeholder:text-[#7e7e7e] resize-none outline-none hover:border-title-green transition-all duration-300 focus:border-title-green"
           />
 
           <button
@@ -97,7 +97,7 @@ const FormAndContactSection = () => {
             </div>
           </div>
           <div className="flex items-center gap-5">
-            <a href="/">
+            <a href="/" className="hover:scale-110 transition-all duration-300">
               <Image
                 src={linkedin}
                 alt="tik-tok"
@@ -106,7 +106,7 @@ const FormAndContactSection = () => {
                 className="w-6 h-6"
               />
             </a>
-            <a href="/">
+            <a href="/" className="hover:scale-110 transition-all duration-300">
               <Image
                 src={instagram}
                 alt="instagram"
@@ -115,7 +115,7 @@ const FormAndContactSection = () => {
                 className="w-6 h-6"
               />
             </a>
-            <a href="/">
+            <a href="/" className="hover:scale-110 transition-all duration-300">
               <Image
                 src={telegram}
                 alt="linkedin"
@@ -124,7 +124,7 @@ const FormAndContactSection = () => {
                 className="w-6 h-6"
               />
             </a>
-            <a href="/">
+            <a href="/" className="hover:scale-110 transition-all duration-300">
               <Image
                 src={tiktok}
                 alt="telegram"
@@ -146,7 +146,7 @@ const FormAndContactSection = () => {
           </div>
           <a
             href="tel:+380970067656"
-            className="font-urbanist font-light text-sm text-primary-white lg:text-base"
+            className="font-urbanist font-light text-sm text-primary-white lg:text-base hover:text-title-green transition-all duration-300"
           >
             +380-97-006-76-56
           </a>
@@ -162,7 +162,7 @@ const FormAndContactSection = () => {
           </div>
           <a
             href="mailto:email@gmail.com"
-            className="font-urbanist font-light text-sm text-primary-white lg:text-base"
+            className="font-urbanist font-light text-sm text-primary-white lg:text-base hover:text-title-green transition-all duration-300"
           >
             email@gmail.com
           </a>
