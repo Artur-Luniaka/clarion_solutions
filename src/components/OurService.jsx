@@ -286,7 +286,7 @@ const OurService = () => {
             <p className="font-urbanist text-base font-light text-primary-white w-[307px]">
               We provide easy-to-understand updates on your progress.
             </p>
-            <button className="w-[307px] h-[52px] flex items-center justify-center bg-btn-green text-primary-dark font-urbanist text-base font-semibold rounded-[28px]">
+            <button className="w-[307px] h-[52px] flex items-center justify-center bg-btn-green text-primary-dark font-urbanist text-base font-semibold rounded-[28px] hover:bg-primary-white transition-all duration-300">
               Get in touch
             </button>
           </div>

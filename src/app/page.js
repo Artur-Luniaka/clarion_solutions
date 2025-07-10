@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import JoinSection from "@/components/JoinSection";
 import OurService from "@/components/OurService";
 import SeoPartnerSection from "@/components/SeoPartnerSection";
 import WhyClarionSol from "@/components/WhyClarionSol";
@@ -13,6 +14,7 @@ export default function Home() {
         <SeoPartnerSection />
         <WhyClarionSol />
         <OurService />
+        <JoinSection />
       </main>
     </>
   );

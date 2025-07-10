@@ -10,6 +10,10 @@ body {
   color: #fff;
 }
 
+body {
+  overflow: hidden;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

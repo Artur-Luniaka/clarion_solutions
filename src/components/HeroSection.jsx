@@ -106,12 +106,12 @@ const HeroSection = () => {
       <Image
         src={manWoman}
         alt="hero-graphic"
-        className="hidden lg:block absolute top-[100px] right-[-200px] z-40 w-[658px] h-[595px] object-cover"
+        className="hidden lg:block absolute top-[100px] right-[-192px] z-40 w-[650px] h-[595px] object-cover"
       />
       <Image
         src={manWomanPhoto}
         alt="hero-graphic"
-        className="hidden lg:block absolute top-[60px] right-[-235px] z-50 w-[688px] h-[619px] object-cover"
+        className="hidden lg:block absolute top-[48px] right-[-235px] z-50 w-[688px] h-[630px] object-cover"
       />
       <Image
         src={blackShadow}
