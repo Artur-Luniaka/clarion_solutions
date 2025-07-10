@@ -11,7 +11,7 @@ const WhyClarionSol = () => {
   const whyDesk4 = "/IMG/why-four-desk.webp";
 
   return (
-    <section className="py-[45px] lg:pt-[140px] lg:pb-[231px]">
+    <section className="py-[45px] lg:pt-[140px] lg:pb-[231px]" id="about">
       <h2 className="font-actay-wide font-bold text-2xl leading-[29px] uppercase w-[284px] mb-6 lg:text-5xl lg:leading-[58px] lg:text-center lg:w-full lg:mb-[67px]">
         Why <span className="text-title-green">ClarionSol</span>{" "}
         <br className="lg:hidden" />

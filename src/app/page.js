@@ -4,6 +4,7 @@ import JoinSection from "@/components/JoinSection";
 import OurService from "@/components/OurService";
 import SeoPartnerSection from "@/components/SeoPartnerSection";
 import WhyClarionSol from "@/components/WhyClarionSol";
+import FormAndContactSection from "@/components/FormAndContactSection";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <WhyClarionSol />
         <OurService />
         <JoinSection />
+        <FormAndContactSection />
       </main>
     </>
   );

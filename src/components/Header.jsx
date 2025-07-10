@@ -33,19 +33,19 @@ const Header = () => {
           </Link>
 
           <Link
-            href="#"
+            href="#services"
             className="text-primary-white font-urbanist font-normal text-base hover:text-btn-green transition-colors duration-300"
           >
             Services
           </Link>
           <Link
-            href="#"
+            href="#about"
             className="text-primary-white font-urbanist font-normal text-base hover:text-btn-green transition-colors duration-300"
           >
             About
           </Link>
           <Link
-            href="#"
+            href="#contact"
             className="text-primary-white font-urbanist font-normal text-base hover:text-btn-green transition-colors duration-300"
           >
             Contact
@@ -66,7 +66,9 @@ const Header = () => {
           />
         </button>
       </header>
-      {isMobileMenuOpen && <MobileMenu />}
+      {isMobileMenuOpen && (
+        <MobileMenu onClose={() => setIsMobileMenuOpen(false)} />
+      )}
     </>
   );
 };

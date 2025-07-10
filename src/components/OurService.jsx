@@ -15,7 +15,7 @@ const OurService = () => {
   const ourDesk5 = "/IMG/our-five-desk.webp";
 
   return (
-    <section className="py-[45px] lg:py-[140px]">
+    <section className="py-[45px] lg:py-[140px]" id="services">
       <div className="flex flex-wrap gap-4 lg:hidden">
         <div className="w-[152px]">
           <h2 className="font-actay-wide text-[24px] font-bold text-title-green leading-[29px] uppercase mb-5">

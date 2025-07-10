@@ -8,9 +8,9 @@ import logoDesk from "../../public/IMG/seo-section-logo.png";
 
 const SeoPartnerSection = () => {
   return (
-    <section className="py-[45px] lg:py-[140px] lg:flex">
+    <section className="py-[45px] lg:py-[140px] lg:flex lg:relative">
       <div className="relative mb-[50px] z-20">
-        <h2 className="font-actay-wide font-bold text-primary-white text-[40px] leading-[48px] uppercase lg:text-[106px] lg:leading-[130px] lg:w-[526px]">
+        <h2 className="font-actay-wide font-bold text-primary-white text-[40px] leading-[48px] uppercase lg:text-[108px] lg:leading-[130px] lg:w-[540px]">
           SEO Partner - is
         </h2>
         <p
@@ -48,27 +48,25 @@ const SeoPartnerSection = () => {
           className="absolute bottom-0 left-[272px] md:left-[456px]"
         />
       </div>
-      <div className="relative z-10">
-        <Image
-          src={seoDesk}
-          alt="seo-section-img-mob "
-          className="hidden lg:flex lg:w-[633px] lg:h-[390px] shrink-0 object-cover "
-        />
-        <Image
-          src={logoDesk}
-          alt="logo"
-          width={78}
-          height={66}
-          className="hidden lg:block absolute top-[13px] left-0"
-        />
-        <Image
-          src={logoDesk}
-          alt="logo"
-          width={78}
-          height={66}
-          className="hidden lg:block absolute bottom-[50px] right-[18px]"
-        />
-      </div>
+      <Image
+        src={seoDesk}
+        alt="seo-section-img-mob "
+        className="hidden lg:block w-[633px] h-[390px] absolute bottom-[190px] right-[-60px]"
+      />
+      <Image
+        src={logoDesk}
+        alt="logo"
+        width={78}
+        height={66}
+        className="hidden lg:block absolute top-[153px] right-[495px]"
+      />
+      <Image
+        src={logoDesk}
+        alt="logo"
+        width={78}
+        height={66}
+        className="hidden lg:block absolute bottom-[190px] right-[-42px]"
+      />
     </section>
   );
 };
