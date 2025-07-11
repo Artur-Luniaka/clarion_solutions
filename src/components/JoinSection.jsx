@@ -26,6 +26,11 @@ const JoinSection = ({ onOpenModal }) => {
         alt="join-shape"
         className="absolute bottom-[-180px] lg:bottom-[100px] left-[-110px] lg:left-[-600px] -z-10 w-full h-[600px]"
       />
+      <Image
+        src={greenShadow}
+        alt="join-shape"
+        className="hidden lg:block absolute top-0 left-[500px] -z-10 w-full h-[600px]"
+      />
       <div className="flex flex-col md:items-center lg:w-[536px]">
         <div className="relative mb-[30px]">
           <h2 className="font-actay-wide text-[24px] font-bold text-primary-white leading-[29px] uppercase md:mb-4 lg:text-left lg:text-[48px] lg:leading-[58px] lg:mb-[28px]">

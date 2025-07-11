@@ -7,12 +7,18 @@ import tiktok from "../../public/SVG/tik-tok.svg";
 import instagram from "../../public/SVG/instagram.svg";
 import linkedin from "../../public/SVG/linkedin.svg";
 import telegram from "../../public/SVG/telegram.svg";
+import greenShadow from "../../public/IMG/hero-green-shadow.webp";
 
 const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="container py-[40px] lg:py-[70px] w-[360px] md:w-[768px] lg:w-[1280px]">
+    <footer className="container py-[40px] lg:py-[70px] w-[360px] md:w-[768px] lg:w-[1280px] relative z-20">
+      <Image
+        src={greenShadow}
+        alt="green-shadow"
+        className="lg:hidden absolute bottom-0 left-[-500px] -z-10 w-auto max-w-none h-full"
+      />
       <div className="lg:flex lg:flex-row lg:flex-wrap lg:justify-between lg:mb-[50px]">
         <div className="mb-[60px] lg:mb-0">
           <Link href="/" className="flex items-center gap-4">

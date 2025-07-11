@@ -13,6 +13,9 @@ import telegram from "../../public/SVG/telegram.svg";
 import photo from "../../public/IMG/form-photo.webp";
 import logo from "../../public/IMG/seo-section-logo.png";
 import Notification from "./Notification";
+import shapeMob from "../../public/IMG/form-shape-mob.webp";
+import shapeDesk from "../../public/IMG/form-shape-desk.webp";
+import greenShadow from "../../public/IMG/hero-green-shadow.webp";
 
 const FormAndContactSection = ({ onSubmit: onSubmitCallback }) => {
   const [formKey, setFormKey] = useState(0);
@@ -49,10 +52,27 @@ const FormAndContactSection = ({ onSubmit: onSubmitCallback }) => {
 
   return (
     <>
-      <section
-        className="py-[45px] lg:py-[154px] lg:relative lg:z-10"
-        id="contact"
-      >
+      <section className="py-[45px] lg:py-[154px] relative z-20" id="contact">
+        <Image
+          src={shapeMob}
+          alt="form-shape"
+          className="absolute bottom-[-120px] left-[-195px] -z-10 w-auto h-auto max-w-none md:hidden"
+        />
+        <Image
+          src={shapeDesk}
+          alt="form-shape"
+          className="absolute bottom-[-195px] left-[-165px] z-[15] w-auto h-full max-w-none lg:block hidden pointer-events-none"
+        />
+        <Image
+          src={greenShadow}
+          alt="green-shadow"
+          className="hidden lg:block absolute bottom-0 left-[-650px] -z-10 w-full h-full"
+        />
+        <Image
+          src={greenShadow}
+          alt="green-shadow"
+          className="hidden lg:block absolute top-[-180px] left-[500px] -z-10 w-full h-full"
+        />
         <div className="flex flex-col gap-6 mb-6 lg:flex lg:justify-between lg:flex-row lg:mb-[53px]">
           <h2 className="font-actay-wide font-bold text-[24px] leading-[29px] text-primary-white uppercase lg:text-[64px] lg:leading-[77px] lg:w-[665px]">
             Have a <span className="text-title-green">question</span> about our
@@ -63,7 +83,7 @@ const FormAndContactSection = ({ onSubmit: onSubmitCallback }) => {
             business.
           </p>
         </div>
-        <div className="mb-6 lg:mb-20 lg:relative">
+        <div className="mb-6 lg:mb-20 relative z-10">
           <form
             key={formKey}
             onSubmit={handleSubmit(onSubmit)}
@@ -92,7 +112,7 @@ const FormAndContactSection = ({ onSubmit: onSubmitCallback }) => {
             <button
               type="submit"
               disabled={!isFormValid}
-              className={`w-[320px] lg:w-[370px] h-[40px] lg:h-[56px] rounded-[28px] bg-primary-white text-primary-black font-urbanist font-semibold text-base flex items-center justify-center transition-all duration-300 ${
+              className={` w-[320px] lg:w-[370px] h-[40px] lg:h-[56px] rounded-[28px] bg-primary-white text-primary-black font-urbanist font-semibold text-base flex items-center justify-center transition-all duration-300 ${
                 isFormValid
                   ? "opacity-100 hover:bg-btn-green cursor-pointer"
                   : "opacity-40 cursor-not-allowed"
@@ -101,6 +121,7 @@ const FormAndContactSection = ({ onSubmit: onSubmitCallback }) => {
               Send
             </button>
           </form>
+
           <Image
             src={photo}
             alt="form-and-contact-section"
@@ -112,8 +133,8 @@ const FormAndContactSection = ({ onSubmit: onSubmitCallback }) => {
             className="w-[78px] h-[66px] absolute top-[19px] left-[496px] hidden lg:block"
           />
         </div>
-        <div className="flex flex-col gap-4 md:items-center lg:flex-row lg:justify-between">
-          <div className="w-[320px] lg:w-[362px] py-3 pl-4 pr-[13px] lg:px-4 lg:pt-3 lg:pb-5 rounded-xl backdrop-blur-[14px] shadow-[inset_0_4px_14px_0_rgba(255,255,255,0.25)] bg-[rgba(208,255,89,0.16)]">
+        <div className="flex flex-col gap-4 md:items-center lg:flex-row lg:justify-between relative z-20">
+          <div className="w-[320px] lg:w-[362px] py-3 pl-4 pr-[13px] lg:px-4 lg:pt-3 lg:pb-5 rounded-xl backdrop-blur-[4px] shadow-[inset_0_4px_14px_0_rgba(255,255,255,0.25)] bg-[rgba(208,255,89,0.16)]">
             <div className="flex items-center justify-between mb-6 lg:mb-[40px]">
               <h3 className="font-actay-wide font-bold text-sm text-primary-white uppercase leading-5 tracking-[0.07em] lg:text-base">
                 Social Media
@@ -178,7 +199,7 @@ const FormAndContactSection = ({ onSubmit: onSubmitCallback }) => {
               </a>
             </div>
           </div>
-          <div className="w-[320px] lg:w-[362px] py-3 pl-4 pr-[13px] lg:px-4 lg:pt-3 lg:pb-5 rounded-xl backdrop-blur-[14px] shadow-[inset_0_4px_14px_0_rgba(255,255,255,0.25)] bg-[rgba(208,255,89,0.16)]">
+          <div className="w-[320px] lg:w-[362px] py-3 pl-4 pr-[13px] lg:px-4 lg:pt-3 lg:pb-5 rounded-xl backdrop-blur-[4px] shadow-[inset_0_4px_14px_0_rgba(255,255,255,0.25)] bg-[rgba(208,255,89,0.16)]">
             <div className="flex items-center justify-between mb-6 lg:mb-[40px]">
               <h3 className="font-actay-wide font-bold text-sm text-primary-white uppercase leading-5 tracking-[0.07em] lg:text-base">
                 Call Us
@@ -194,7 +215,7 @@ const FormAndContactSection = ({ onSubmit: onSubmitCallback }) => {
               +380-97-006-76-56
             </a>
           </div>
-          <div className="w-[320px] lg:w-[362px] py-3 pl-4 pr-[13px] lg:px-4 lg:pt-3 lg:pb-5 rounded-xl backdrop-blur-[14px] shadow-[inset_0_4px_14px_0_rgba(255,255,255,0.25)] bg-[rgba(208,255,89,0.16)]">
+          <div className="w-[320px] lg:w-[362px] py-3 pl-4 pr-[13px] lg:px-4 lg:pt-3 lg:pb-5 rounded-xl backdrop-blur-[4px] shadow-[inset_0_4px_14px_0_rgba(255,255,255,0.25)] bg-[rgba(208,255,89,0.16)]">
             <div className="flex items-center justify-between mb-6 lg:mb-[40px]">
               <h3 className="font-actay-wide font-bold text-sm text-primary-white uppercase leading-5 tracking-[0.07em] lg:text-base">
                 Email Us
