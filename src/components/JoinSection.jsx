@@ -4,10 +4,28 @@ import Image from "next/image";
 import blackShadow from "../../public/IMG/join-black-shadow.webp";
 import photoShadow from "../../public/IMG/join-photo-shadow.png";
 import photo from "../../public/IMG/join-photo.webp";
+import shapeMob from "../../public/IMG/join-shape-mob.webp";
+import shapeDesk from "../../public/IMG/join-shape-desk.webp";
+import greenShadow from "../../public/IMG/hero-green-shadow.webp";
 
 const JoinSection = ({ onOpenModal }) => {
   return (
-    <section className="py-[45px] lg:py-[145px] lg:relative">
+    <section className="py-[45px] lg:py-[145px] relative z-20">
+      <Image
+        src={shapeMob}
+        alt="join-shape"
+        className="absolute bottom-[-280px] left-[-280px] md:left-[-260px] -z-10 w-auto h-auto max-w-none lg:hidden"
+      />
+      <Image
+        src={shapeDesk}
+        alt="join-shape"
+        className="absolute bottom-[-80px] left-0 -z-10 w-auto max-w-none h-full lg:block hidden"
+      />
+      <Image
+        src={greenShadow}
+        alt="join-shape"
+        className="absolute bottom-[-180px] lg:bottom-[100px] left-[-110px] lg:left-[-600px] -z-10 w-full h-[600px]"
+      />
       <div className="flex flex-col md:items-center lg:w-[536px]">
         <div className="relative mb-[30px]">
           <h2 className="font-actay-wide text-[24px] font-bold text-primary-white leading-[29px] uppercase md:mb-4 lg:text-left lg:text-[48px] lg:leading-[58px] lg:mb-[28px]">
