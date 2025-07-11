@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import arrow from "../../public/SVG/diagonal-arrow.svg";
+import shapeMob from "../../public/IMG/service-shape-mob.webp";
+import shapeDesk from "../../public/IMG/service-shape-desk.webp";
 
 const OurService = ({ onOpenModal }) => {
   const ourMob1 = "/IMG/our-one-mob.webp";
@@ -15,7 +17,17 @@ const OurService = ({ onOpenModal }) => {
   const ourDesk5 = "/IMG/our-five-desk.webp";
 
   return (
-    <section className="py-[45px] lg:py-[140px]" id="services">
+    <section className="relative z-20 py-[45px] lg:py-[140px]" id="services">
+      <Image
+        src={shapeMob}
+        alt="service-shape"
+        className="absolute bottom-[-259px] md:bottom-[-40px] right-[-515px] md:right-[-50px] -z-10 w-auto h-full max-w-none lg:hidden"
+      />
+      <Image
+        src={shapeDesk}
+        alt="service-shape"
+        className="absolute bottom-[-200px] left-[-160px] -z-10 w-auto max-w-none h-full lg:block hidden"
+      />
       <div className="flex flex-wrap gap-4 lg:hidden">
         <div className="w-[152px]">
           <h2 className="font-actay-wide text-[24px] font-bold text-title-green leading-[29px] uppercase mb-5">
