@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { motion } from "framer-motion";
 import socialBall from "../../public/SVG/social-ball.svg";
 import callUs from "../../public/SVG/social-phone.svg";
 import emailUs from "../../public/SVG/social-sms.svg";
@@ -74,67 +75,104 @@ const FormAndContactSection = ({ onSubmit: onSubmitCallback }) => {
           className="hidden lg:block absolute top-[-180px] left-[500px] -z-10 w-full h-full"
         />
         <div className="flex flex-col gap-6 mb-6 lg:flex lg:justify-between lg:flex-row lg:mb-[53px]">
-          <h2 className="font-actay-wide font-bold text-[24px] leading-[29px] text-primary-white uppercase lg:text-[64px] lg:leading-[77px] lg:w-[665px]">
+          <motion.h2
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="font-actay-wide font-bold text-[24px] leading-[29px] text-primary-white uppercase lg:text-[64px] lg:leading-[77px] lg:w-[665px]"
+          >
             Have a <span className="text-title-green">question</span> about our
             SEO services?
-          </h2>
-          <p className="font-urbanist font-light text-sm text-primary-white lg:text-base lg:w-[269px] lg:mt-auto">
+          </motion.h2>
+          <motion.p
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
+            className="font-urbanist font-light text-sm text-primary-white lg:text-base lg:w-[269px] lg:mt-auto"
+          >
             Write to us — we’ll help you choose the best option for your
             business.
-          </p>
+          </motion.p>
         </div>
         <div className="mb-6 lg:mb-20 relative z-10">
-          <form
-            key={formKey}
-            onSubmit={handleSubmit(onSubmit)}
-            className="md:flex md:flex-col md:items-center lg:items-start"
+          <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+            viewport={{ once: true }}
           >
-            <input
-              type="text"
-              placeholder="Name"
-              {...register("name")}
-              className="w-[320px] lg:w-[370px] h-[40px] lg:h-[48px] px-6 py-[10px] border border-primary-white rounded-[32px] bg-transparent mb-3 placeholder:font-urbanist placeholder:font-light placeholder:text-sm placeholder:text-[#7e7e7e] outline-none hover:border-title-green transition-all duration-300 focus:border-title-green"
-            />
-
-            <input
-              type="tel"
-              placeholder="Phone number (required)"
-              {...register("phone")}
-              className="w-[320px] lg:w-[370px] h-[40px] lg:h-[48px] px-6 py-[10px] border border-primary-white rounded-[32px] bg-transparent mb-3 placeholder:font-urbanist placeholder:font-light placeholder:text-sm placeholder:text-[#7e7e7e] outline-none hover:border-title-green transition-all duration-300 focus:border-title-green"
-            />
-
-            <textarea
-              placeholder="Your message"
-              {...register("message")}
-              className="w-[320px] lg:w-[370px] h-[100px] lg:h-[116px] px-6 py-[14px] border border-primary-white rounded-xl bg-transparent mb-4 placeholder:font-urbanist placeholder:font-light placeholder:text-sm placeholder:text-[#7e7e7e] resize-none outline-none hover:border-title-green transition-all duration-300 focus:border-title-green"
-            />
-
-            <button
-              type="submit"
-              disabled={!isFormValid}
-              className={` w-[320px] lg:w-[370px] h-[40px] lg:h-[56px] rounded-[28px] bg-primary-white text-primary-black font-urbanist font-semibold text-base flex items-center justify-center transition-all duration-300 ${
-                isFormValid
-                  ? "opacity-100 hover:bg-btn-green cursor-pointer"
-                  : "opacity-40 cursor-not-allowed"
-              }`}
+            <form
+              key={formKey}
+              onSubmit={handleSubmit(onSubmit)}
+              className="md:flex md:flex-col md:items-center lg:items-start"
             >
-              Send
-            </button>
-          </form>
+              <input
+                type="text"
+                placeholder="Name"
+                {...register("name")}
+                className="w-[320px] lg:w-[370px] h-[40px] lg:h-[48px] px-6 py-[10px] border border-primary-white rounded-[32px] bg-transparent mb-3 placeholder:font-urbanist placeholder:font-light placeholder:text-sm placeholder:text-[#7e7e7e] outline-none hover:border-title-green transition-all duration-300 focus:border-title-green"
+              />
 
-          <Image
-            src={photo}
-            alt="form-and-contact-section"
-            className="w-[724px] h-[308px] hidden lg:block absolute top-0 right-[-60px]"
-          />
-          <Image
-            src={logo}
-            alt="logo"
-            className="w-[78px] h-[66px] absolute top-[19px] left-[496px] hidden lg:block"
-          />
+              <input
+                type="tel"
+                placeholder="Phone number (required)"
+                {...register("phone")}
+                className="w-[320px] lg:w-[370px] h-[40px] lg:h-[48px] px-6 py-[10px] border border-primary-white rounded-[32px] bg-transparent mb-3 placeholder:font-urbanist placeholder:font-light placeholder:text-sm placeholder:text-[#7e7e7e] outline-none hover:border-title-green transition-all duration-300 focus:border-title-green"
+              />
+
+              <textarea
+                placeholder="Your message"
+                {...register("message")}
+                className="w-[320px] lg:w-[370px] h-[100px] lg:h-[116px] px-6 py-[14px] border border-primary-white rounded-xl bg-transparent mb-4 placeholder:font-urbanist placeholder:font-light placeholder:text-sm placeholder:text-[#7e7e7e] resize-none outline-none hover:border-title-green transition-all duration-300 focus:border-title-green"
+              />
+
+              <button
+                type="submit"
+                disabled={!isFormValid}
+                className={` w-[320px] lg:w-[370px] h-[40px] lg:h-[56px] rounded-[28px] bg-primary-white text-primary-black font-urbanist font-semibold text-base flex items-center justify-center transition-all duration-300 ${
+                  isFormValid
+                    ? "opacity-100 hover:bg-btn-green cursor-pointer"
+                    : "opacity-40 cursor-not-allowed"
+                }`}
+              >
+                Send
+              </button>
+            </form>
+
+            <motion.div
+              initial={{ x: 200, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              viewport={{ once: true }}
+              className="w-[724px] h-[308px] hidden lg:block absolute top-0 right-[-60px]"
+            >
+              <Image
+                src={photo}
+                alt="form-and-contact-section"
+                className="w-[724px] h-[308px]"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 1.05 }}
+              viewport={{ once: true }}
+              className="w-[78px] h-[66px] absolute top-[19px] left-[496px] hidden lg:block"
+            >
+              <Image src={logo} alt="logo" className="w-[78px] h-[66px]" />
+            </motion.div>
+          </motion.div>
         </div>
         <div className="flex flex-col gap-4 md:items-center lg:flex-row lg:justify-between relative z-20">
-          <div className="w-[320px] lg:w-[362px] py-3 pl-4 pr-[13px] lg:px-4 lg:pt-3 lg:pb-5 rounded-xl backdrop-blur-[4px] shadow-[inset_0_4px_14px_0_rgba(255,255,255,0.25)] bg-[rgba(208,255,89,0.16)]">
+          <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            viewport={{ once: true }}
+            className="w-[320px] lg:w-[362px] py-3 pl-4 pr-[13px] lg:px-4 lg:pt-3 lg:pb-5 rounded-xl backdrop-blur-[4px] shadow-[inset_0_4px_14px_0_rgba(255,255,255,0.25)] bg-[rgba(208,255,89,0.16)]"
+          >
             <div className="flex items-center justify-between mb-6 lg:mb-[40px]">
               <h3 className="font-actay-wide font-bold text-sm text-primary-white uppercase leading-5 tracking-[0.07em] lg:text-base">
                 Social Media
@@ -198,8 +236,14 @@ const FormAndContactSection = ({ onSubmit: onSubmitCallback }) => {
                 />
               </a>
             </div>
-          </div>
-          <div className="w-[320px] lg:w-[362px] py-3 pl-4 pr-[13px] lg:px-4 lg:pt-3 lg:pb-5 rounded-xl backdrop-blur-[4px] shadow-[inset_0_4px_14px_0_rgba(255,255,255,0.25)] bg-[rgba(208,255,89,0.16)]">
+          </motion.div>
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
+            className="w-[320px] lg:w-[362px] py-3 pl-4 pr-[13px] lg:px-4 lg:pt-3 lg:pb-5 rounded-xl backdrop-blur-[4px] shadow-[inset_0_4px_14px_0_rgba(255,255,255,0.25)] bg-[rgba(208,255,89,0.16)]"
+          >
             <div className="flex items-center justify-between mb-6 lg:mb-[40px]">
               <h3 className="font-actay-wide font-bold text-sm text-primary-white uppercase leading-5 tracking-[0.07em] lg:text-base">
                 Call Us
@@ -214,8 +258,14 @@ const FormAndContactSection = ({ onSubmit: onSubmitCallback }) => {
             >
               +380-97-006-76-56
             </a>
-          </div>
-          <div className="w-[320px] lg:w-[362px] py-3 pl-4 pr-[13px] lg:px-4 lg:pt-3 lg:pb-5 rounded-xl backdrop-blur-[4px] shadow-[inset_0_4px_14px_0_rgba(255,255,255,0.25)] bg-[rgba(208,255,89,0.16)]">
+          </motion.div>
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.45 }}
+            viewport={{ once: true }}
+            className="w-[320px] lg:w-[362px] py-3 pl-4 pr-[13px] lg:px-4 lg:pt-3 lg:pb-5 rounded-xl backdrop-blur-[4px] shadow-[inset_0_4px_14px_0_rgba(255,255,255,0.25)] bg-[rgba(208,255,89,0.16)]"
+          >
             <div className="flex items-center justify-between mb-6 lg:mb-[40px]">
               <h3 className="font-actay-wide font-bold text-sm text-primary-white uppercase leading-5 tracking-[0.07em] lg:text-base">
                 Email Us
@@ -230,7 +280,7 @@ const FormAndContactSection = ({ onSubmit: onSubmitCallback }) => {
             >
               email@gmail.com
             </a>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>
