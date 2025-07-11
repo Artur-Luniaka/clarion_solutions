@@ -24,18 +24,18 @@ const OurService = ({ onOpenModal }) => {
   return (
     <section
       ref={ref}
-      className="relative z-20 py-[45px] lg:py-[140px]"
+      className="relative z-[500] py-[45px] lg:py-[140px]"
       id="services"
     >
       <Image
         src={shapeMob}
         alt="service-shape"
-        className="absolute bottom-[-259px] md:bottom-[-40px] right-[-515px] md:right-[-50px] -z-10 w-auto h-full max-w-none lg:hidden"
+        className="absolute bottom-[-259px] md:bottom-[-40px] right-[-515px] md:right-[-50px] -z-10 w-auto h-full max-w-none lg:hidden pointer-events-none"
       />
       <Image
         src={shapeDesk}
         alt="service-shape"
-        className="absolute bottom-[-200px] left-[-160px] -z-10 w-auto max-w-none h-full lg:block hidden"
+        className="absolute bottom-[-200px] left-[-160px] -z-10 w-auto max-w-none h-full lg:block hidden pointer-events-none"
       />
       <div className="flex flex-wrap gap-4 lg:hidden">
         <motion.div

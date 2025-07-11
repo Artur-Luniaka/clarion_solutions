@@ -50,12 +50,12 @@ const HeroSection = ({ onOpenModal }) => {
       <Image
         src={shapeMob}
         alt="hero-graphic"
-        className="absolute bottom-[-35px] md:bottom-[25px] left-[-180px] md:left-[-215px] -z-10 w-auto h-auto max-w-none lg:hidden"
+        className="absolute bottom-[-35px] md:bottom-[25px] left-[-180px] md:left-[-215px] -z-10 w-auto h-auto max-w-none lg:hidden pointer-events-none"
       />
       <Image
         src={shapeDesk}
         alt="hero-graphic"
-        className=" hidden lg:block absolute bottom-[-140px] left-[-110px] -z-10 w-auto max-w-none h-full"
+        className=" hidden lg:block absolute bottom-[-140px] left-[-110px] -z-10 w-auto max-w-none h-full pointer-events-none"
       />
       <motion.h1
         initial={{ y: 30, opacity: 0 }}

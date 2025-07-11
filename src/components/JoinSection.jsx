@@ -15,16 +15,16 @@ const JoinSection = ({ onOpenModal }) => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section ref={ref} className="py-[45px] lg:py-[145px] relative z-20">
+    <section ref={ref} className="py-[45px] lg:py-[145px] relative z-40">
       <Image
         src={shapeMob}
         alt="join-shape"
-        className="absolute bottom-[-280px] left-[-280px] md:left-[-260px] -z-10 w-auto h-auto max-w-none lg:hidden"
+        className="absolute bottom-[-280px] left-[-280px] md:left-[-260px] -z-10 w-auto h-auto max-w-none lg:hidden pointer-events-none"
       />
       <Image
         src={shapeDesk}
         alt="join-shape"
-        className="absolute bottom-[-80px] left-0 -z-10 w-auto max-w-none h-full lg:block hidden"
+        className="absolute bottom-[-80px] left-0 -z-10 w-auto max-w-none h-full lg:block hidden pointer-events-none"
       />
       <Image
         src={greenShadow}

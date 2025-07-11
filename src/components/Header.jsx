@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 import logo from "../../public/IMG/header-logo.png";
 import menu from "../../public/SVG/burger-menu.svg";
 import closeBtn from "../../public/SVG/btn-x.svg";
@@ -17,7 +18,7 @@ const Header = ({ onOpenModal }) => {
 
   return (
     <>
-      <header className="container  pt-5 pb-[15px] lg:py-8 flex justify-between items-center w-[360px] md:w-[768px] lg:w-[1280px]">
+      <header className="container  pt-5 pb-[15px] lg:py-8 flex justify-between items-center w-[360px] md:w-[768px] lg:w-[1280px] relative z-50">
         <Link href="/" className="flex items-center gap-4">
           <Image src={logo} alt="logo" width={34} height={29} />
           <span className="text-primary-white font-urbanist font-bold text-base uppercase leading-5 tracking-[0.06em]">
@@ -63,20 +64,29 @@ const Header = ({ onOpenModal }) => {
           className="flex items-center gap-2 lg:hidden"
           onClick={toggleMobileMenu}
         >
-          <Image
-            src={isMobileMenuOpen ? closeBtn : menu}
-            alt={isMobileMenuOpen ? "close" : "menu"}
-            width={24}
-            height={24}
-          />
+          <motion.div
+            initial={{ rotate: 0 }}
+            animate={{ rotate: isMobileMenuOpen ? 180 : 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Image
+              src={isMobileMenuOpen ? closeBtn : menu}
+              alt={isMobileMenuOpen ? "close" : "menu"}
+              width={24}
+              height={24}
+            />
+          </motion.div>
         </button>
       </header>
-      {isMobileMenuOpen && (
-        <MobileMenu
-          onClose={() => setIsMobileMenuOpen(false)}
-          onOpenModal={onOpenModal}
-        />
-      )}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <MobileMenu
+            key="mobile-menu"
+            onClose={() => setIsMobileMenuOpen(false)}
+            onOpenModal={onOpenModal}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 };

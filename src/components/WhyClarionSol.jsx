@@ -29,12 +29,12 @@ const WhyClarionSol = () => {
       <Image
         src={shapeMob}
         alt="why-shape"
-        className="absolute bottom-[-120px] md:bottom-[30px] right-[-440px] md:right-0 -z-10 w-auto h-full max-w-none lg:hidden"
+        className="absolute bottom-[-120px] md:bottom-[30px] right-[-440px] md:right-0 -z-10 w-auto h-full max-w-none lg:hidden pointer-events-none"
       />
       <Image
         src={shapeDesk}
         alt="why-shape"
-        className="absolute bottom-[-110px] left-[-580px] -z-10 w-auto max-w-none h-full lg:block hidden"
+        className="absolute bottom-[-110px] left-[-580px] -z-10 w-auto max-w-none h-full lg:block hidden pointer-events-none"
       />
       <Image
         src={greenShadow}

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const MobileMenu = ({ onClose, onOpenModal }) => {
   const handleLinkClick = () => {
@@ -19,7 +20,13 @@ const MobileMenu = ({ onClose, onOpenModal }) => {
   };
 
   return (
-    <div className="w-full bg-primary-dark z-40 min-h-screen">
+    <motion.div
+      initial={{ x: -100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: -100, opacity: 0 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className="fixed top-0 left-0 w-full bg-primary-dark z-40 min-h-screen pt-[80px]"
+    >
       <div className="container pt-[45px]">
         <h2 className="font-actay-wide font-bold text-2xl uppercase text-primary-white leading-[29px] mb-6">
           Need <span className="text-title-green">help?</span>
@@ -67,7 +74,7 @@ const MobileMenu = ({ onClose, onOpenModal }) => {
           </Link>
         </nav>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

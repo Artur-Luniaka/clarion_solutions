@@ -57,7 +57,7 @@ const FormAndContactSection = ({ onSubmit: onSubmitCallback }) => {
         <Image
           src={shapeMob}
           alt="form-shape"
-          className="absolute bottom-[-120px] left-[-195px] -z-10 w-auto h-auto max-w-none md:hidden"
+          className="absolute bottom-[-120px] left-[-195px] -z-10 w-auto h-auto max-w-none md:hidden pointer-events-none"
         />
         <Image
           src={shapeDesk}
