@@ -26,20 +26,31 @@ const ModalForm = ({ isOpen, onClose, onSubmit: onSubmitCallback }) => {
     onClose();
   };
 
-  const onSubmit = (data) => {
-    const formData = {
-      ...data,
-      phone: String(data.phone),
-    };
-    console.log(formData);
+  const onSubmit = async (data) => {
+    try {
+      const formData = {
+        name: data.name || "",
+        phone: String(data.phone),
+      };
 
-    reset();
-    setFormKey((prev) => prev + 1);
+      const response = await fetch("/api/send-message", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    onClose();
-
-    if (onSubmitCallback) {
-      onSubmitCallback();
+      if (response.ok) {
+        reset();
+        setFormKey((prev) => prev + 1);
+        onClose();
+        if (onSubmitCallback) {
+          onSubmitCallback();
+        }
+      }
+    } catch (error) {
+      console.error("Error:", error);
     }
   };
 

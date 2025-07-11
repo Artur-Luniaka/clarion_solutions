@@ -32,22 +32,36 @@ const FormAndContactSection = ({ onSubmit: onSubmitCallback }) => {
   const phoneValue = watch("phone");
   const isFormValid = phoneValue && phoneValue.toString().trim() !== "";
 
-  const onSubmit = (data) => {
-    const formData = {
-      ...data,
-      phone: String(data.phone),
-    };
-    console.log(formData);
+  const onSubmit = async (data) => {
+    try {
+      const formData = {
+        name: data.name || "",
+        phone: String(data.phone),
+        message: data.message || "",
+      };
 
-    reset();
-    setFormKey((prev) => prev + 1);
+      const response = await fetch("/api/send-message", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 100);
+      if (response.ok) {
+        reset();
+        setFormKey((prev) => prev + 1);
 
-    if (onSubmitCallback) {
-      onSubmitCallback();
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 100);
+
+        if (onSubmitCallback) {
+          onSubmitCallback();
+        }
+      }
+    } catch (error) {
+      console.error("Error:", error);
     }
   };
 
@@ -72,7 +86,7 @@ const FormAndContactSection = ({ onSubmit: onSubmitCallback }) => {
         <Image
           src={greenShadow}
           alt="green-shadow"
-          className="hidden lg:block absolute top-[-180px] left-[500px] -z-10 w-full h-full"
+          className="hidden lg:block absolute top-[-180px] left-[650px] -z-10 w-full h-full"
         />
         <div className="flex flex-col gap-6 mb-6 lg:flex lg:justify-between lg:flex-row lg:mb-[53px]">
           <motion.h2

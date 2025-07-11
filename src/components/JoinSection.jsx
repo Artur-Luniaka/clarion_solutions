@@ -15,7 +15,7 @@ const JoinSection = ({ onOpenModal }) => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section ref={ref} className="py-[45px] lg:py-[145px] relative z-40">
+    <section ref={ref} className="py-[45px] lg:py-[145px] relative z-20">
       <Image
         src={shapeMob}
         alt="join-shape"
@@ -110,7 +110,7 @@ const JoinSection = ({ onOpenModal }) => {
       <Image
         src={blackShadow}
         alt="black-shadow"
-        className="absolute bottom-[-225px] right-[-125px] w-[850px] h-[500px] lg:block hidden lg:overflow-hidden"
+        className="absolute bottom-[-225px] right-[-255px] w-[1000px] h-[500px] lg:block hidden z-30"
       />
     </section>
   );
