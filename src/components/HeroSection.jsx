@@ -10,16 +10,39 @@ import shadowDesk from "../../public/IMG/hero-white-shadow-desk.png";
 import manWoman from "../../public/IMG/hero-man-women-shadow.png";
 import manWomanPhoto from "../../public/IMG/hero-man-women.webp";
 import blackShadow from "../../public/IMG/hero-black-shadow.png";
+import greenShadow from "../../public/IMG/hero-green-shadow.png";
+import shapeMob from "../../public/IMG/hero-shape-mob.webp";
+import shapeDesk from "../../public/IMG/hero-shape-desk.webp";
 
 const HeroSection = ({ onOpenModal }) => {
   return (
-    <section className="lg:relative py-[45px] lg:pt-[41px] lg:pb-[146px]">
+    <section className="relative py-[45px] lg:pt-[41px] lg:pb-[146px] z-20">
+      <Image
+        src={greenShadow}
+        alt="hero-graphic"
+        className="absolute top-[-225px] lg:top-[-300px] left-[-150px] md:left-[-260px] lg:left-[-500px] -z-10 w-full h-full"
+      />
+      <Image
+        src={greenShadow}
+        alt="hero-graphic"
+        className="absolute bottom-[-180px] lg:bottom-0 right-[-180px] lg:right-[-430px] -z-10 w-full h-full"
+      />
+      <Image
+        src={shapeMob}
+        alt="hero-graphic"
+        className="absolute bottom-[-35px] md:bottom-[25px] left-[-180px] md:left-[-215px] -z-10 w-auto h-auto max-w-none lg:hidden"
+      />
+      <Image
+        src={shapeDesk}
+        alt="hero-graphic"
+        className=" hidden lg:block absolute bottom-[-125px] left-[-110px] -z-10 w-full h-full"
+      />
       <h1 className="text-primary-white font-actay-wide font-bold text-[32px] lg:text-[67px] uppercase mb-6 md:text-center lg:mb-[60px]">
         SEO That Brings You Clients
       </h1>
       <div className="lg:hidden">
         <div className="flex gap-4 mb-6 md:justify-center">
-          <div className="w-[152px] h-[139px] py-3 px-4 rounded-[20px] shrink-0 backdrop-blur-[14px] shadow-[inset_0_4px_14px_0_rgba(255,255,255,0.25)] bg-[rgba(208,255,89,0.16)]">
+          <div className="w-[152px] h-[139px] py-3 px-4 rounded-[20px] shrink-0 backdrop-blur-[3px] shadow-[inset_0_4px_14px_0_rgba(255,255,255,0.25)] bg-[rgba(208,255,89,0.16)]">
             <p className="font-urbanist font-semibold text-primary-white text-[40px] uppercase mb-4 leading-[40px]">
               100%
             </p>
@@ -79,7 +102,7 @@ const HeroSection = ({ onOpenModal }) => {
           </p>
         </div>
         <div className="flex gap-5">
-          <div className="flex flex-col w-[265px] h-[232px] pt-5 pb-4 px-6 rounded-[20px] shrink-0 backdrop-blur-[14px] shadow-[inset_0_4px_14px_0_rgba(255,255,255,0.25)] bg-[rgba(208,255,89,0.16)]">
+          <div className="flex flex-col w-[265px] h-[232px] pt-5 pb-4 px-6 rounded-[20px] shrink-0 backdrop-blur-[3px] shadow-[inset_0_4px_14px_0_rgba(255,255,255,0.25)] bg-[rgba(208,255,89,0.16)]">
             <p className="font-urbanist font-semibold text-primary-white text-[80px] uppercase mb-auto leading-[80px]">
               100%
             </p>
@@ -124,7 +147,14 @@ const HeroSection = ({ onOpenModal }) => {
       <Image
         src={blackShadow}
         alt="hero-graphic"
-        className="hidden lg:block absolute bottom-[45px] right-[-150px] z-50"
+        className="hidden lg:block absolute bottom-[40px] right-[-150px] z-50"
+        width={954}
+        height={246}
+      />
+      <Image
+        src={blackShadow}
+        alt="hero-graphic"
+        className="hidden lg:block absolute bottom-[-110px] right-[-65px] z-50 h-[500px]"
         width={954}
         height={246}
       />
