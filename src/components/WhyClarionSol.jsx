@@ -1,5 +1,10 @@
 "use client";
 
+import Image from "next/image";
+import shapeMob from "../../public/IMG/why-shape-mob.webp";
+import shapeDesk from "../../public/IMG/why-shape-desk.webp";
+import greenShadow from "../../public/IMG/hero-green-shadow.webp";
+
 const WhyClarionSol = () => {
   const whyMob1 = "/IMG/why-one-mob.webp";
   const whyMob2 = "/IMG/why-two-mob.webp";
@@ -11,7 +16,30 @@ const WhyClarionSol = () => {
   const whyDesk4 = "/IMG/why-four-desk.webp";
 
   return (
-    <section className="py-[45px] lg:pt-[140px] lg:pb-[231px]" id="about">
+    <section
+      className="relative z-20 py-[45px] lg:pt-[140px] lg:pb-[231px]"
+      id="about"
+    >
+      <Image
+        src={shapeMob}
+        alt="why-shape"
+        className="absolute bottom-[-120px] md:bottom-[30px] right-[-440px] md:right-0 -z-10 w-auto h-full max-w-none lg:hidden"
+      />
+      <Image
+        src={shapeDesk}
+        alt="why-shape"
+        className="absolute bottom-[-110px] left-[-580px] -z-10 w-auto max-w-none h-full lg:block hidden"
+      />
+      <Image
+        src={greenShadow}
+        alt="why-shape"
+        className="absolute bottom-0 md:bottom-[70px] lg:bottom-[275px] left-[-140px] md:left-[-200px] lg:left-[-500px] -z-10 w-full h-full"
+      />
+      <Image
+        src={greenShadow}
+        alt="why-shape"
+        className="hidden lg:block absolute bottom-[-450px] right-[-550px] -z-10 w-full h-full"
+      />
       <h2 className="font-actay-wide font-bold text-2xl leading-[29px] uppercase w-[284px] mb-6 lg:text-5xl lg:leading-[58px] lg:text-center lg:w-full lg:mb-[67px]">
         Why <span className="text-title-green">ClarionSol</span>{" "}
         <br className="lg:hidden" />

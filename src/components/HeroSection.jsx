@@ -35,7 +35,7 @@ const HeroSection = ({ onOpenModal }) => {
       <Image
         src={shapeDesk}
         alt="hero-graphic"
-        className=" hidden lg:block absolute bottom-[-125px] left-[-110px] -z-10 w-full h-full"
+        className=" hidden lg:block absolute bottom-[-140px] left-[-110px] -z-10 w-auto max-w-none h-full"
       />
       <h1 className="text-primary-white font-actay-wide font-bold text-[32px] lg:text-[67px] uppercase mb-6 md:text-center lg:mb-[60px]">
         SEO That Brings You Clients
