@@ -1,11 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import shapeMob from "../../public/IMG/why-shape-mob.webp";
 import shapeDesk from "../../public/IMG/why-shape-desk.webp";
 import greenShadow from "../../public/IMG/hero-green-shadow.webp";
 
 const WhyClarionSol = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
   const whyMob1 = "/IMG/why-one-mob.webp";
   const whyMob2 = "/IMG/why-two-mob.webp";
   const whyMob3 = "/IMG/why-three-mob.webp";
@@ -17,6 +22,7 @@ const WhyClarionSol = () => {
 
   return (
     <section
+      ref={ref}
       className="relative z-20 py-[45px] lg:pt-[140px] lg:pb-[231px]"
       id="about"
     >
@@ -40,13 +46,21 @@ const WhyClarionSol = () => {
         alt="why-shape"
         className="hidden lg:block absolute bottom-[-450px] right-[-550px] -z-10 w-full h-full"
       />
-      <h2 className="font-actay-wide font-bold text-2xl leading-[29px] uppercase w-[284px] mb-6 lg:text-5xl lg:leading-[58px] lg:text-center lg:w-full lg:mb-[67px]">
+      <motion.h2
+        initial={{ y: 30, opacity: 0 }}
+        animate={isInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="font-actay-wide font-bold text-2xl leading-[29px] uppercase w-[284px] mb-6 lg:text-5xl lg:leading-[58px] lg:text-center lg:w-full lg:mb-[67px]"
+      >
         Why <span className="text-title-green">ClarionSol</span>{" "}
         <br className="lg:hidden" />
         is your best choice
-      </h2>
+      </motion.h2>
       <div className="flex gap-4 flex-wrap md:justify-center lg:hidden">
-        <div
+        <motion.div
+          initial={{ x: -30, opacity: 0 }}
+          animate={isInView ? { x: 0, opacity: 1 } : { x: -30, opacity: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           style={{
             backgroundImage: `url(${whyMob1})`,
             backgroundSize: "contain",
@@ -60,10 +74,13 @@ const WhyClarionSol = () => {
             Transparent process
           </h3>
           <p className="font-urbanist font-light text-xs text-primary-white">
-            You’ll always know what we’re doing and why.
+            You'll always know what we're doing and why.
           </p>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          animate={isInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
+          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           style={{
             backgroundImage: `url(${whyMob2})`,
             backgroundSize: "contain",
@@ -79,8 +96,11 @@ const WhyClarionSol = () => {
           <p className="font-urbanist font-light text-xs text-primary-dark">
             We create SEO plans that fit your unique business.
           </p>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          animate={isInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
+          transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
           style={{
             backgroundImage: `url(${whyMob3})`,
             backgroundSize: "contain",
@@ -96,8 +116,11 @@ const WhyClarionSol = () => {
           <p className="font-urbanist font-light text-xs text-primary-dark">
             We provide easy-to-understand updates on your progress.
           </p>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          initial={{ x: 30, opacity: 0 }}
+          animate={isInView ? { x: 0, opacity: 1 } : { x: 30, opacity: 0 }}
+          transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
           style={{
             backgroundImage: `url(${whyMob4})`,
             backgroundSize: "contain",
@@ -113,10 +136,13 @@ const WhyClarionSol = () => {
           <p className="font-urbanist font-light text-xs text-primary-white">
             Our methods are tested, refined, and deliver real results.
           </p>
-        </div>
+        </motion.div>
       </div>
       <div className="hidden lg:flex gap-6">
-        <div
+        <motion.div
+          initial={{ x: -30, opacity: 0 }}
+          animate={isInView ? { x: 0, opacity: 1 } : { x: -30, opacity: 0 }}
+          transition={{ duration: 0.9, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
           style={{
             backgroundImage: `url(${whyDesk1})`,
             backgroundSize: "contain",
@@ -132,8 +158,11 @@ const WhyClarionSol = () => {
           <p className="font-urbanist font-light text-base text-primary-white">
             You’ll always know what we’re doing and why.
           </p>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          initial={{ x: 30, opacity: 0 }}
+          animate={isInView ? { x: 0, opacity: 1 } : { x: 30, opacity: 0 }}
+          transition={{ duration: 0.9, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
           style={{
             backgroundImage: `url(${whyDesk2})`,
             backgroundSize: "contain",
@@ -149,8 +178,11 @@ const WhyClarionSol = () => {
           <p className="font-urbanist font-light text-base text-primary-dark w-[212px]">
             We create SEO plans that fit your unique business.
           </p>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          animate={isInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
+          transition={{ duration: 0.9, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}
           style={{
             backgroundImage: `url(${whyDesk3})`,
             backgroundSize: "contain",
@@ -166,8 +198,11 @@ const WhyClarionSol = () => {
           <p className="font-urbanist font-light text-base text-primary-white w-[218px]">
             Our methods are tested, refined, and deliver real results.
           </p>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          initial={{ x: 30, opacity: 0 }}
+          animate={isInView ? { x: 0, opacity: 1 } : { x: 30, opacity: 0 }}
+          transition={{ duration: 0.9, delay: 0.8, ease: [0.4, 0, 0.2, 1] }}
           style={{
             backgroundImage: `url(${whyDesk4})`,
             backgroundSize: "contain",
@@ -183,7 +218,7 @@ const WhyClarionSol = () => {
           <p className="font-urbanist font-light text-base text-primary-dark w-[215px]">
             We provide easy-to-understand updates on your progress.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
