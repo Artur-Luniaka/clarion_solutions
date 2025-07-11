@@ -78,7 +78,7 @@ const FormAndContactSection = ({ onSubmit: onSubmitCallback }) => {
 
             <input
               type="tel"
-              placeholder="Phone number"
+              placeholder="Phone number (required)"
               {...register("phone")}
               className="w-[320px] lg:w-[370px] h-[40px] lg:h-[48px] px-6 py-[10px] border border-primary-white rounded-[32px] bg-transparent mb-3 placeholder:font-urbanist placeholder:font-light placeholder:text-sm placeholder:text-[#7e7e7e] outline-none hover:border-title-green transition-all duration-300 focus:border-title-green"
             />

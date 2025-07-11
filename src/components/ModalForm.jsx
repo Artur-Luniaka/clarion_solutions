@@ -6,6 +6,8 @@ import Image from "next/image";
 import closeBtn from "../../public/SVG/btn-x.svg";
 
 const ModalForm = ({ isOpen, onClose, onSubmit: onSubmitCallback }) => {
+  const [formKey, setFormKey] = useState(0);
+
   const {
     register,
     handleSubmit,
@@ -14,9 +16,14 @@ const ModalForm = ({ isOpen, onClose, onSubmit: onSubmitCallback }) => {
     watch,
   } = useForm();
 
-  const nameValue = watch("name");
   const phoneValue = watch("phone");
-  const isFormValid = nameValue && phoneValue;
+  const isFormValid = phoneValue && phoneValue.toString().trim() !== "";
+
+  const handleClose = () => {
+    reset();
+    setFormKey((prev) => prev + 1);
+    onClose();
+  };
 
   const onSubmit = (data) => {
     const formData = {
@@ -26,6 +33,7 @@ const ModalForm = ({ isOpen, onClose, onSubmit: onSubmitCallback }) => {
     console.log(formData);
 
     reset();
+    setFormKey((prev) => prev + 1);
 
     onClose();
 
@@ -37,24 +45,26 @@ const ModalForm = ({ isOpen, onClose, onSubmit: onSubmitCallback }) => {
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === "Escape") {
-        onClose();
+        handleClose();
       }
     };
 
     if (isOpen) {
       document.addEventListener("keydown", handleEscape);
-      document.body.classList.add("noscroll");
+
+      document.documentElement.classList.add("scroll-locked");
     }
 
     return () => {
       document.removeEventListener("keydown", handleEscape);
-      document.body.classList.remove("noscroll");
+
+      document.documentElement.classList.remove("scroll-locked");
     };
-  }, [isOpen, onClose]);
+  }, [isOpen]);
 
   const handleOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
-      onClose();
+      handleClose();
     }
   };
 
@@ -77,26 +87,27 @@ const ModalForm = ({ isOpen, onClose, onSubmit: onSubmitCallback }) => {
             Fill in your details and our team will get back to you shortly.
           </p>
           <button
-            onClick={onClose}
+            onClick={handleClose}
             className="absolute top-[-5px] lg:top-[-25px] right-0 lg:right-[-50px] w-5 h-5 lg:w-6 lg:h-6"
           >
             <Image src={closeBtn} alt="close" />
           </button>
         </div>
         <form
+          key={formKey}
           onSubmit={handleSubmit(onSubmit)}
           className="lg:flex lg:flex-col lg:items-center"
         >
           <input
             type="text"
             placeholder="Name"
-            {...register("name", { required: true })}
+            {...register("name")}
             className="w-[280px] lg:w-[376px] h-[40px] lg:h-[48px] px-6 py-[10px] border border-primary-white rounded-[32px] bg-transparent mb-3 lg:mb-4 placeholder:font-urbanist placeholder:font-light placeholder:text-sm placeholder:leading-5 placeholder:text-[#7e7e7e] outline-none hover:border-title-green transition-all duration-300 focus:border-title-green"
           />
           <input
             type="tel"
-            placeholder="Phone number"
-            {...register("phone", { required: true })}
+            placeholder="Phone number (required)"
+            {...register("phone")}
             className="w-[280px] lg:w-[376px] h-[40px] lg:h-[48px] px-6 py-[10px] border border-primary-white rounded-[32px] bg-transparent mb-8 lg:mb-10 placeholder:font-urbanist placeholder:font-light placeholder:text-sm placeholder:leading-5 placeholder:text-[#7e7e7e] outline-none hover:border-title-green transition-all duration-300 focus:border-title-green"
           />
           <button
