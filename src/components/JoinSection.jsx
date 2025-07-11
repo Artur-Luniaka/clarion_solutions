@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import blackShadow from "../../public/IMG/join-black-shadow.webp";
 import photoShadow from "../../public/IMG/join-photo-shadow.png";
 import photo from "../../public/IMG/join-photo.webp";
@@ -9,8 +11,11 @@ import shapeDesk from "../../public/IMG/join-shape-desk.webp";
 import greenShadow from "../../public/IMG/hero-green-shadow.webp";
 
 const JoinSection = ({ onOpenModal }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
   return (
-    <section className="py-[45px] lg:py-[145px] relative z-20">
+    <section ref={ref} className="py-[45px] lg:py-[145px] relative z-20">
       <Image
         src={shapeMob}
         alt="join-shape"
@@ -33,36 +38,75 @@ const JoinSection = ({ onOpenModal }) => {
       />
       <div className="flex flex-col md:items-center lg:w-[536px]">
         <div className="relative mb-[30px]">
-          <h2 className="font-actay-wide text-[24px] font-bold text-primary-white leading-[29px] uppercase md:mb-4 lg:text-left lg:text-[48px] lg:leading-[58px] lg:mb-[28px]">
+          <motion.h2
+            initial={{ x: -30, opacity: 0 }}
+            animate={isInView ? { x: 0, opacity: 1 } : { x: -30, opacity: 0 }}
+            transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1] }}
+            className="font-actay-wide text-[24px] font-bold text-primary-white leading-[29px] uppercase md:mb-4 lg:text-left lg:text-[48px] lg:leading-[58px] lg:mb-[28px]"
+          >
             Join the world <br className="md:hidden lg:block" /> of effective
             SEO <span className="text-title-green">today</span>
-          </h2>
-          <p className="absolute bottom-[-11px] left-[100px] md:static font-urbanist text-sm font-light text-primary-white w-[116px] md:w-full md:text-center lg:hidden">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.9, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+            className="absolute bottom-[-11px] left-[100px] md:static font-urbanist text-sm font-light text-primary-white w-[116px] md:w-full md:text-center lg:hidden"
+          >
             We help businesses grow through
-          </p>
-          <p className="hidden lg:block lg:text-left lg:text-base lg:w-[322px] lg:font-urbanist lg:font-light lg:text-primary-white">
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.9, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+            className="hidden lg:block lg:text-left lg:text-base lg:w-[322px] lg:font-urbanist lg:font-light lg:text-primary-white"
+          >
             Start growing your business with SEO strategies that work.
-          </p>
+          </motion.p>
         </div>
-        <button
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.9, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
           type="button"
           onClick={onOpenModal}
           className="w-[320px] lg:w-[272px] h-[40px] lg:h-[52px] flex items-center justify-center bg-btn-green text-primary-dark font-urbanist text-base font-semibold rounded-[28px] lg:mr-auto hover:bg-primary-white transition-all duration-300"
         >
           Get started now
-        </button>
+        </motion.button>
       </div>
-      <Image
-        src={photoShadow}
-        alt="black-shadow"
-        className="absolute bottom-[45px] right-[-58px] w-[745px] h-[500px] hidden lg:block"
-      />
-      <Image
-        src={photo}
-        alt="photo"
-        className="absolute bottom-[30px] right-[-130px] w-[810px] h-[580px] hidden lg:block"
-      />
-
+      <motion.div
+        initial={{ x: 30, opacity: 0 }}
+        animate={isInView ? { x: 0, opacity: 1 } : { x: 30, opacity: 0 }}
+        transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+        style={{
+          position: "absolute",
+          bottom: "45px",
+          right: "-58px",
+          zIndex: 10,
+          width: "745px",
+          height: "500px",
+        }}
+        className="hidden lg:block"
+      >
+        <Image src={photoShadow} alt="black-shadow" className="w-full h-full" />
+      </motion.div>
+      <motion.div
+        initial={{ x: 30, opacity: 0 }}
+        animate={isInView ? { x: 0, opacity: 1 } : { x: 30, opacity: 0 }}
+        transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+        style={{
+          position: "absolute",
+          bottom: "30px",
+          right: "-130px",
+          zIndex: 20,
+          width: "810px",
+          height: "580px",
+        }}
+        className="hidden lg:block"
+      >
+        <Image src={photo} alt="photo" className="w-full h-full" />
+      </motion.div>
       <Image
         src={blackShadow}
         alt="black-shadow"
