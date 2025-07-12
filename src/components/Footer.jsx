@@ -64,30 +64,30 @@ const Footer = () => {
             Information
           </h3>
           <nav className="flex flex-col gap-5">
-            <a
-              href="/"
+            <Link
+              href="/legal-details"
               className="font-urbanist font-normal text-base text-primary-white hover:text-title-green transition-all duration-300"
             >
               Legal Details
-            </a>
-            <a
-              href="/"
+            </Link>
+            <Link
+              href="/terms-of-service"
               className="font-urbanist font-normal text-base text-primary-white hover:text-title-green transition-all duration-300"
             >
               Terms of Service
-            </a>
-            <a
-              href="/"
+            </Link>
+            <Link
+              href="/privacy-policy"
               className="font-urbanist font-normal text-base text-primary-white hover:text-title-green transition-all duration-300"
             >
               Privacy Policy
-            </a>
-            <a
-              href="/"
+            </Link>
+            <Link
+              href="/cookie-policy"
               className="font-urbanist font-normal text-base text-primary-white hover:text-title-green transition-all duration-300"
             >
               Cookie Policy
-            </a>
+            </Link>
           </nav>
         </div>
         <div className="flex flex-col gap-[60px] mb-10 lg:mb-0">
@@ -97,16 +97,16 @@ const Footer = () => {
             </h3>
             <div className="flex flex-col gap-5">
               <a
-                href="tel:+380970067656"
+                href="tel:+16618575169"
                 className="font-urbanist font-normal text-base text-primary-white hover:text-title-green transition-all duration-300"
               >
-                +380-97-006-76-56
+                +1 (661) 857-5169
               </a>
               <a
-                href="mailto:email@gmail.com"
+                href="mailto:clarionsolut@gmail.com"
                 className="font-urbanist font-normal text-base text-primary-white hover:text-title-green transition-all duration-300"
               >
-                email@gmail.com
+                clarionsolut@gmail.com
               </a>
             </div>
           </div>

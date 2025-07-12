@@ -267,10 +267,10 @@ const FormAndContactSection = ({ onSubmit: onSubmitCallback }) => {
               </div>
             </div>
             <a
-              href="tel:+380970067656"
+              href="tel:+16618575169"
               className="font-urbanist font-light text-sm text-primary-white lg:text-base hover:text-title-green transition-all duration-300"
             >
-              +380-97-006-76-56
+              +1 (661) 857-5169
             </a>
           </motion.div>
           <motion.div
@@ -289,10 +289,10 @@ const FormAndContactSection = ({ onSubmit: onSubmitCallback }) => {
               </div>
             </div>
             <a
-              href="mailto:email@gmail.com"
+              href="mailto:clarionsolut@gmail.com"
               className="font-urbanist font-light text-sm text-primary-white lg:text-base hover:text-title-green transition-all duration-300"
             >
-              email@gmail.com
+              clarionsolut@gmail.com
             </a>
           </motion.div>
         </div>
